@@ -1,7 +1,12 @@
 <template>
   <div class="Result">
-    <Header :title="artistName" doubleTitle />
-    <Albums :artistData="artistData" />
+    <Header
+      :title="artistName"
+      doubleTitle
+      :image="artistData.strArtistClearart"
+      v-if="artistData"
+    />
+    <Albums :artistData="artistData" v-if="artistData" />
   </div>
 </template>
 
@@ -17,7 +22,7 @@ export default {
   data() {
     return {
       artistName: decodeURI(window.location.pathname.split("/")[2]),
-      artistData: {},
+      artistData: null,
     };
   },
   async created() {

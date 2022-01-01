@@ -11,9 +11,9 @@
     <div
       v-for="album in albumsData"
       :key="album.idAlbum"
-      class="h-28 w-3/4 flex my-3 shadow-md rounded-lg overflow-hidden"
+      class="h-32 w-3/4 flex my-3 shadow-md rounded-lg overflow-hidden"
     >
-      <img :src="album.strAlbumThumb" class="h-full" />
+      <img :src="album.strAlbumThumb" class="h-full w-auto" />
       <div
         class="bg-gray-100 pl-10 text-xl flex flex-col justify-center w-full"
       >
@@ -47,7 +47,7 @@ export default {
       this.albumsData = data.album;
       // console.log(this.idArtist);
       //   console.log(this.albumsData.length());
-      //   console.log(this.albumsData);
+      console.log(this.albumsData);
     }
   },
 };

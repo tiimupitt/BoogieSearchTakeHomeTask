@@ -6,14 +6,26 @@
         bg-gradient-to-t
         from-gray-800
         to-indigo-900
-        pt-32
-        shadow-md
+        shadow-xl
         mb-6
         overflow-hidden
+        flex
+        justify-end
       "
     >
+      <img
+        :src="image"
+        class="
+          opacity-20
+          w-screen
+          self-baseline
+          object-cover
+          transform
+          translate-x-32
+        "
+      />
       <h1
-        :class="` text-5xl text-gray-100 font-extrabold uppercase
+        :class="`w-screen text-5xl text-gray-100 font-extrabold uppercase pt-32
         ${doubleTitle ? 'absolute text-left pl-16' : 'text-center'}`"
       >
         {{ title }}
@@ -23,6 +35,7 @@
         id="outlineText"
         v-if="doubleTitle"
         class="
+          w-screen
           mt-4
           text-9xl
           uppercase
@@ -35,6 +48,8 @@
           text-left
           pl-8
           whitespace-nowrap
+          pt-28
+          absolute
         "
       >
         {{ title }}
@@ -49,7 +64,7 @@ export default {
   props: {
     title: String,
     doubleTitle: Boolean,
-    Image,
+    image: String,
   },
 };
 </script>
