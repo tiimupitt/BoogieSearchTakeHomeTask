@@ -2,26 +2,29 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Index from '../views/Index.vue'
+import Result from '../views/Result.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/index',
     name: 'Index',
     component: Index
   },
   {
-    path: '/result',
+    path: '/result/*',
     name: 'Result',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Result.vue')
+    component: Result
+  },
+  {
+    path: '*',
+    component: Index
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
