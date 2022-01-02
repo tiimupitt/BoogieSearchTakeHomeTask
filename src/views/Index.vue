@@ -1,7 +1,10 @@
+// home page for searching music artists
+
 <template>
   <div class="Index">
     <Header title="Album Search" />
     <div class="flex justify-center">
+      <!-- set the max content width to 1024px / lg -->
       <div id="innerContainer" class="flex justify-center">
         <ArtistSearchForm />
       </div>

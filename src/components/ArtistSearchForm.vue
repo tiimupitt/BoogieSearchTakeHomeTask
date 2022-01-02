@@ -1,3 +1,5 @@
+// input form to search for artist
+
 <template>
   <form :action="'/result/' + artistName" class="w-full mx-48">
     <!-- input border -->
@@ -41,7 +43,6 @@
 <script>
 export default {
   name: "ArtistSearchForm",
-  components: {},
   data() {
     return {
       artistName: "",

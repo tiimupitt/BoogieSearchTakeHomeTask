@@ -1,3 +1,5 @@
+// display artist search results
+
 <template>
   <div class="Result">
     <Header
@@ -7,6 +9,7 @@
       v-if="artistData"
     />
     <div class="flex justify-center">
+      <!-- set the max content width to 1024px / lg -->
       <div id="innerContainer" class="flex gap-24 mb-8">
         <!-- back button -->
         <router-link
@@ -36,20 +39,17 @@ export default {
   },
   data() {
     return {
-      artistName: decodeURI(window.location.pathname.split("/")[2]),
+      artistName: decodeURI(window.location.pathname.split("/")[2]), // find the artist name in the url
       artistData: null,
     };
   },
   async created() {
-    // console.log(this.artistName);
-
+    // fetch data for the artist
     let response = await fetch(
       `https://www.theaudiodb.com/api/v1/json/2/search.php?s=${this.artistName}`
     );
     const data = await response.json();
     this.artistData = data.artists[0];
-
-    console.log(this.artistData);
   },
 };
 </script>

@@ -1,5 +1,8 @@
+// display all of the artists albums as a series of cards with images / details
+
 <template>
   <div class="font-bold w-full ml-10">
+    <!-- Found <numAlbums> results for <artistName> -->
     <div class="flex text-lg text-gray-800">
       <p>Found&nbsp;</p>
       <p v-if="albumsData.length" class="text-indigo-600">
@@ -9,7 +12,7 @@
       <p class="text-indigo-600">"{{ artistData.strArtist }}"</p>
     </div>
 
-    <!-- album container -->
+    <!-- container for each album card -->
     <div
       v-for="album in albumsData"
       :key="album.idAlbum"
@@ -26,6 +29,7 @@
       "
       @click="handleClick(album.idAlbum)"
     >
+      <!-- if there is no album artwork, display "no artwork" instead -->
       <div
         class="
           w-32
@@ -41,11 +45,12 @@
       >
         <p class="text-gray-400">No Image</p>
       </div>
-
+      <!-- album artwork -->
       <img
         :src="album.strAlbumThumb"
         class="h-32 w-auto z-10 absolute rounded-l-lg"
       />
+      <!-- album name and year of release -->
       <div
         class="bg-gray-100 pl-40 text-xl flex flex-col justify-center w-full"
       >
@@ -61,7 +66,6 @@
 <script>
 export default {
   name: "ArtistAlbums",
-  components: {},
   props: {
     artistData: Object,
   },
@@ -72,22 +76,22 @@ export default {
     };
   },
   async created() {
+    // fetch album data for the artist
     if (this.artistData) {
       let response = await fetch(
         `https://theaudiodb.com/api/v1/json/2/album.php?i=${this.artistData.idArtist}`
       );
       const data = await response.json();
+
       // sort the albums by release date
       this.albumsData = data.album.sort((a, b) => {
         return b.intYearReleased - a.intYearReleased;
       });
-      console.log(this.albumsData);
     }
   },
   methods: {
+    // when an album card is clicked, redirect to a page showing more detail on it
     handleClick(idAlbum) {
-      console.log(idAlbum);
-      console.log(window.location.pathname + "/" + idAlbum);
       window.location.href = "/Album/" + idAlbum;
     },
   },

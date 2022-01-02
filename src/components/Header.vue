@@ -1,3 +1,5 @@
+// web page header component
+
 <template>
   <header>
     <!-- background -->
@@ -12,6 +14,7 @@
         overflow-hidden
         flex
         justify-center
+        w-screen
       "
     >
       <!-- sets max width to 1024px/lg -->
@@ -30,7 +33,6 @@
             mt-4
           "
         />
-
         <!-- main title -->
         <h1
           :class="`w-full text-5xl text-gray-100 font-extrabold uppercase pt-32 whitespace-nowrap
@@ -38,8 +40,7 @@
         >
           {{ title }}
         </h1>
-
-        <!-- doubled outline text -->
+        <!-- large outline text -->
         <h1
           id="outlineText"
           v-if="doubleTitle"
