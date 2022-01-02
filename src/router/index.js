@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Index from '../views/Index.vue'
 import Result from '../views/Result.vue'
+import Album from '../views/Album.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
     path: '/result/*',
     name: 'Result',
     component: Result
+  },
+  {
+    path: '/album/*',
+    name: 'Album',
+    component: Album
   },
   {
     path: '*',

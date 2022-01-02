@@ -1,15 +1,11 @@
 <template>
   <div class="Index">
     <Header title="Album Search" />
-    <!-- <form
-      method="get"
-      action="https://www.theaudiodb.com/api/v1/json/2/search.php?s=coldplay"
-      class="flex justify-center px-48"
-    >
-      <Input icon="search" placeholder="Search artist" />
-    </form> -->
-
-    <ArtistSearchForm />
+    <div class="flex justify-center">
+      <div id="innerContainer" class="flex justify-center">
+        <ArtistSearchForm />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,3 +21,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#innerContainer {
+  width: 1024px;
+}
+</style>

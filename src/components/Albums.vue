@@ -1,5 +1,5 @@
 <template>
-  <div class="font-bold w-auto ml-10">
+  <div class="font-bold w-full ml-10">
     <div class="flex text-lg text-gray-800">
       <p>Found&nbsp;</p>
       <p v-if="albumsData.length" class="text-indigo-600">
@@ -8,14 +8,46 @@
       <p>results for&nbsp;</p>
       <p class="text-indigo-600">"{{ artistData.strArtist }}"</p>
     </div>
+
+    <!-- album container -->
     <div
       v-for="album in albumsData"
       :key="album.idAlbum"
-      class="h-32 w-3/4 flex my-3 shadow-md rounded-lg overflow-hidden"
+      class="
+        h-32
+        w-full
+        flex
+        my-3
+        shadow-md
+        rounded-lg
+        overflow-hidden
+        cursor-pointer
+        hover:opacity-80
+      "
+      @click="handleClick(album.idAlbum)"
     >
-      <img :src="album.strAlbumThumb" class="h-full w-auto" />
       <div
-        class="bg-gray-100 pl-10 text-xl flex flex-col justify-center w-full"
+        class="
+          w-32
+          h-32
+          bg-gray-200
+          absolute
+          z-0
+          rounded-l-lg
+          flex
+          items-center
+          justify-center
+        "
+      >
+        <p class="text-gray-400">No Image</p>
+      </div>
+
+      <img
+        :src="album.strAlbumThumb"
+        class="h-32 w-auto z-10 absolute rounded-l-lg"
+      />
+      <div
+        class="bg-gray-100 pl-40 text-xl flex flex-col justify-center w-full"
       >
         <p class="text-left text-indigo-600">
           {{ album.intYearReleased }}
@@ -36,6 +68,7 @@ export default {
   data() {
     return {
       albumsData: [],
+      idSelectedAlbum: null,
     };
   },
   async created() {
@@ -44,11 +77,19 @@ export default {
         `https://theaudiodb.com/api/v1/json/2/album.php?i=${this.artistData.idArtist}`
       );
       const data = await response.json();
-      this.albumsData = data.album;
-      // console.log(this.idArtist);
-      //   console.log(this.albumsData.length());
+      // sort the albums by release date
+      this.albumsData = data.album.sort((a, b) => {
+        return b.intYearReleased - a.intYearReleased;
+      });
       console.log(this.albumsData);
     }
+  },
+  methods: {
+    handleClick(idAlbum) {
+      console.log(idAlbum);
+      console.log(window.location.pathname + "/" + idAlbum);
+      window.location.href = "/Album/" + idAlbum;
+    },
   },
 };
 </script>

@@ -14,13 +14,13 @@ module.exports = {
         orange: colors.orange,
         lime: colors.lime,
         emerald: colors.emerald,
-        teal:colors.teal,
+        teal: colors.teal,
         cyan: colors.cyan,
         sky: colors.sky,
         violet: colors.violet,
         fuchsia: colors.fuchsia,
         rose: colors.rose,
-      },
+      }
     },
   },
   variants: {

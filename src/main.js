@@ -4,10 +4,10 @@ import VueRouter from 'vue-router'
 import './assets/styles/index.css'
 import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faSearch)
+library.add(faSearch, faLongArrowAltLeft)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

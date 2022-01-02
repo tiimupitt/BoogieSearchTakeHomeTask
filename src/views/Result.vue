@@ -6,18 +6,33 @@
       :image="artistData.strArtistClearart"
       v-if="artistData"
     />
-    <Albums :artistData="artistData" v-if="artistData" />
+    <div class="flex justify-center">
+      <div id="innerContainer" class="flex gap-24 mb-8">
+        <!-- back button -->
+        <router-link
+          to="/index"
+          class="absolute top-0 text-white opacity-60 mt-4 ml-10 text-lg"
+          ><font-awesome-icon icon="long-arrow-alt-left" />
+          &nbsp;Back</router-link
+        >
+        <Albums :artistData="artistData" v-if="artistData" />
+        <Gallery :artistData="artistData" v-if="artistData" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "../components/Header.vue";
 import Albums from "../components/Albums.vue";
+import Gallery from "../components/Gallery.vue";
+
 export default {
   name: "Result",
   components: {
     Header,
     Albums,
+    Gallery,
   },
   data() {
     return {
@@ -38,3 +53,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#innerContainer {
+  width: 1024px;
+}
+</style>

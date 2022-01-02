@@ -1,44 +1,41 @@
 <template>
-  <div>
-    <form :action="'/result/' + artistName" class="mx-48">
-      <!-- input border -->
-      <div
+  <form :action="'/result/' + artistName" class="w-full mx-48">
+    <!-- input border -->
+    <div
+      class="
+        flex
+        border border-gray-500
+        rounded-lg
+        py-2
+        px-6
+        shadow-md
+        w-full
+        min-w-min
+        justify-between
+      "
+    >
+      <!-- input text field -->
+      <input
+        v-model="artistName"
+        placeholder="Search artist"
+        required
+        type="text"
         class="
-          flex
-          border border-gray-500
-          rounded-lg
-          py-2
-          px-6
-          shadow-md
-          w-full
-          min-w-min
-          justify-between
+          placeholder-gray-900
+          border-0
+          text-gray-900 text-lg
+          px-0
+          focus:ring-0
         "
-      >
-        <!-- input text field -->
-        <input
-          v-model="artistName"
-          placeholder="Search artist"
-          required
-          type="text"
-          class="
-            placeholder-gray-900
-            border-0
-            text-gray-900 text-lg
-            px-0
-            focus:ring-0
-          "
-        />
-        <!-- input icon -->
-        <div class="flex items-center">
-          <p class="text-2xl text-gray-500">
-            <font-awesome-icon icon="search" />
-          </p>
-        </div>
+      />
+      <!-- input icon -->
+      <div class="flex items-center">
+        <p class="text-2xl text-gray-500">
+          <font-awesome-icon icon="search" />
+        </p>
       </div>
-    </form>
-    <p>Artist Name: {{ artistName }}</p>
-  </div>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -50,10 +47,5 @@ export default {
       artistName: "",
     };
   },
-  //   methods: {
-  //     handleSubmit() {
-  //       router.push({ name: "result", params: { artistName } });
-  //     },
-  //   },
 };
 </script>
