@@ -27,6 +27,7 @@
             object-cover
             transform
             translate-x-32
+            mt-4
           "
         />
 

@@ -60,7 +60,7 @@
 
 <script>
 export default {
-  name: "Albums",
+  name: "ArtistAlbums",
   components: {},
   props: {
     artistData: Object,

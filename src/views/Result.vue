@@ -15,8 +15,8 @@
           ><font-awesome-icon icon="long-arrow-alt-left" />
           &nbsp;Back</router-link
         >
-        <Albums :artistData="artistData" v-if="artistData" />
-        <Gallery :artistData="artistData" v-if="artistData" />
+        <ArtistAlbums :artistData="artistData" v-if="artistData" />
+        <ArtistGallery :artistData="artistData" v-if="artistData" />
       </div>
     </div>
   </div>
@@ -24,15 +24,15 @@
 
 <script>
 import Header from "../components/Header.vue";
-import Albums from "../components/Albums.vue";
-import Gallery from "../components/Gallery.vue";
+import ArtistAlbums from "../components/ArtistAlbums.vue";
+import ArtistGallery from "../components/ArtistGallery.vue";
 
 export default {
   name: "Result",
   components: {
     Header,
-    Albums,
-    Gallery,
+    ArtistAlbums,
+    ArtistGallery,
   },
   data() {
     return {
