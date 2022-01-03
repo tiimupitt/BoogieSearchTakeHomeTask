@@ -11,10 +11,10 @@
         to-indigo-900
         shadow-xl
         mb-6
-        overflow-hidden
         flex
         justify-center
-        w-screen
+        max-w-full
+        overflow-hidden
       "
     >
       <!-- sets max width to 1024px/lg -->
@@ -24,8 +24,9 @@
           v-if="image"
           :src="image"
           class="
+            innerContainer
             opacity-20
-            w-screen
+            max-w-full
             self-baseline
             object-cover
             transform
@@ -35,7 +36,7 @@
         />
         <!-- main title -->
         <h1
-          :class="`w-full text-5xl text-gray-100 font-extrabold uppercase pt-32 whitespace-nowrap
+          :class="`max-w-full text-5xl text-gray-100 font-extrabold uppercase pt-32 whitespace-nowrap overflow-hidden
         ${doubleTitle ? 'absolute text-left pl-16' : 'text-center'}`"
         >
           {{ title }}
@@ -45,7 +46,7 @@
           id="outlineText"
           v-if="doubleTitle"
           class="
-            w-auto
+            max-w-full
             mt-4
             text-9xl
             uppercase
@@ -60,6 +61,7 @@
             whitespace-nowrap
             pt-28
             absolute
+            overflow-hidden
           "
         >
           {{ title }}
@@ -84,7 +86,7 @@ export default {
 #outlineText {
   -webkit-text-stroke: 2px white;
 }
-#innerContainer {
+.innerContainer {
   width: 1024px;
 }
 </style>

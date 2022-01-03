@@ -43,16 +43,16 @@
           <!-- release date -->
           <div class="flex">
             <p>Released in&nbsp;</p>
-            <p class="text-indigo-600">{{ album.intYearReleased }},</p>
+            <p class="text-indigo-600">{{ album.intYearReleased }}</p>
           </div>
           <!-- genre type -->
           <div class="flex">
-            <p>&nbsp;in the genre of&nbsp;</p>
-            <p class="text-indigo-600">{{ album.strGenre }},</p>
+            <p>Genre&nbsp;</p>
+            <p class="text-indigo-600">{{ album.strGenre }}</p>
           </div>
           <!-- record label -->
           <div class="flex">
-            <p>&nbsp;Record label&nbsp;</p>
+            <p>Record label&nbsp;</p>
             <p class="text-indigo-600">{{ album.strLabel }}</p>
           </div>
         </div>
