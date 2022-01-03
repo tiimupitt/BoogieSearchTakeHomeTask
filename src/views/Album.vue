@@ -10,7 +10,7 @@
     />
     <div class="flex justify-center w-screen overflow-hidden">
       <!-- set the max content width to 1024px / lg -->
-      <div id="innerContainer" class="flex flex-col mb-8 justify-center">
+      <div class="flex flex-col mb-8 justify-center w-full max-w-screen-lg">
         <!-- back button -->
         <p
           @click="handleClick()"
@@ -117,9 +117,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#innerContainer {
-  width: 1024px;
-}
-</style>

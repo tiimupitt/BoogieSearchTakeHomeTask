@@ -1,9 +1,5 @@
 <template>
-  <div id="app" class="w-screen overflow-x-hidden max-w-full">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/result">Result</router-link>
-    </div> -->
+  <div id="app" class="w-screen overflow-x-hidden">
     <router-view />
   </div>
 </template>

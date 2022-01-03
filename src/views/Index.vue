@@ -5,7 +5,7 @@
     <Header title="Album Search" />
     <div class="flex justify-center">
       <!-- set the max content width to 1024px / lg -->
-      <div id="innerContainer" class="flex justify-center">
+      <div class="flex justify-center w-full max-w-screen-lg">
         <ArtistSearchForm />
       </div>
     </div>
@@ -24,9 +24,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#innerContainer {
-  width: 1024px;
-}
-</style>

@@ -18,13 +18,12 @@
       "
     >
       <!-- sets max width to 1024px/lg -->
-      <div id="innerContainer" class="flex">
+      <div class="flex w-full max-w-screen-lg">
         <!-- artist image -->
         <img
           v-if="image"
           :src="image"
           class="
-            innerContainer
             opacity-20
             max-w-full
             self-baseline
@@ -85,8 +84,5 @@ export default {
 <style scoped>
 #outlineText {
   -webkit-text-stroke: 2px white;
-}
-.innerContainer {
-  width: 1024px;
 }
 </style>

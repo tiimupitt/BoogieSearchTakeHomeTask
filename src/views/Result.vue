@@ -10,7 +10,7 @@
     />
     <div class="flex justify-center">
       <!-- set the max content width to 1024px / lg -->
-      <div id="innerContainer" class="flex gap-24 mb-8">
+      <div class="flex gap-24 mb-8 w-full max-w-screen-lg">
         <!-- back button -->
         <router-link
           to="/index"
@@ -54,8 +54,3 @@ export default {
 };
 </script>
 
-<style scoped>
-#innerContainer {
-  width: 1024px;
-}
-</style>
